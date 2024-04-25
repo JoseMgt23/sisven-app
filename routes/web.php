@@ -10,3 +10,4 @@ Route::get('/categories', [CategoryController ::class,'index'])->name('categorie
 Route::get('/categories', [CategoryController ::class,'store'])->name('categories.store');
 Route::get('/categories/create', [CategoryController ::class,'create'])->name('categories.create');
 Route::get('/categories/{category}', [CategoryController ::class,'create'])->name('categories.create');
+Route::get('/categories/{category}/edit', [CategoryController ::class,'edit'])->name('categories.edit');

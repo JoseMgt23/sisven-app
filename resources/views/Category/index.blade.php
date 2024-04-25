@@ -29,6 +29,8 @@
       <td>{{$category->name}}</td>
       <td>{{$category->description}}</td>
       <td>
+        <a href="{{route('categories.edit',['category'=>$category->id_categories])}}"
+        class="btn btn-info">Edit</a></li>
         <form action="{{route('category.destroy',['category'->$category->name])}}"
         method='POST' style="display: inline-block">
         @method('delete')
