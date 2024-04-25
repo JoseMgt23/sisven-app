@@ -13,9 +13,10 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        $categories = Category::with('products')->get();
+        $categories = Category::all();
 
         return view("category.index", ["categories" => $categories]);
+
     }
 
     /**
@@ -39,7 +40,7 @@ class CategoryController extends Controller
         $category->description = $request->description;
         $category->save();
 
-        $categories = Category::with('products')->get();
+        $categories = Category::all();
 
         return view("category.index", ["categories" => $categories]);
 
@@ -69,14 +70,15 @@ class CategoryController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        $category = Category::find($id);
-        $category->name = $request->name;
-        $category->description = $request->description; 
-        $category->save();
+            $category = Category::find($id);
+            $category->name = $request->name;
+            $category->description = $request->description; 
+            $category->save();
 
-        $categories = Category::with('products')->get();
+            $categories = Category::all();
 
         return view("category.index", ["categories" => $categories]);
+
     }
 
     /**
@@ -87,8 +89,9 @@ class CategoryController extends Controller
         $category= Category::find($id);
         $category->delete();
 
-        $categories = Category::with('products')->get();
+        $categories = Category::all();
 
         return view("category.index", ["categories" => $categories]);
+
     }
 }
