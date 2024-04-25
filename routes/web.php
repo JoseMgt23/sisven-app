@@ -3,6 +3,7 @@
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\DetailController;
+use App\Http\Controllers\PayModeController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -33,4 +34,11 @@ Route::get('/details/{detail}', [DetailController::class, 'destroy'])->name('det
 Route::put('/details/{detail}', [DetailController::class, 'update'])->name('details.update');
 Route::get('/details/{detail}/edit', [DetailController::class, 'edit'])->name('details.edit');
 
-//PayMode
+//PayMode 
+Route::get('/paymodes', [PayModeController::class, 'index'])->name('paymodes.index');
+Route::post('/paymodes', [PayModeController::class, 'store'])->name('paymodes.store');
+Route::get('/paymodes/create', [PayModeController::class, 'create'])->name('paymodes.create');
+Route::delete('/paymodes/{paymode}', [PayModeController::class, 'destroy'])->name('paymodes.destroy');
+Route::put('/paymodes/{paymode}', [PayModeController::class, 'update'])->name('paymodes.update');
+Route::get('/paymodes/{paymode}/edit', [PayModeController::class, 'edit'])->name('paymodes.edit');
+
