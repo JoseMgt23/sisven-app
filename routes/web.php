@@ -4,6 +4,7 @@ use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\DetailController;
 use App\Http\Controllers\PayModeController;
+use App\Http\Controllers\ProductController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -42,3 +43,10 @@ Route::delete('/paymodes/{paymode}', [PayModeController::class, 'destroy'])->nam
 Route::put('/paymodes/{paymode}', [PayModeController::class, 'update'])->name('paymodes.update');
 Route::get('/paymodes/{paymode}/edit', [PayModeController::class, 'edit'])->name('paymodes.edit');
 
+//Product
+Route::get('/products', [ProductController::class, 'index'])->name('products.index');
+Route::post('/products', [ProductController::class, 'store'])->name('products.store');
+Route::get('/products/create', [ProductController::class, 'create'])->name('products.create');
+Route::delete('/products/{product}', [ProductController::class, 'destroy'])->name('products.destroy');
+Route::put('/products/{product}', [ProductController::class, 'update'])->name('products.update');
+Route::get('/products/{product}/edit', [ProductController::class, 'edit'])->name('products.edit');
