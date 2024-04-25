@@ -74,6 +74,11 @@ class CategoryController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $category= Category::find($id);
+        $category->delete();
+
+        $categories = Category::with('products')->get();
+
+        return view("category.index", ["categories" => $categories]);
     }
 }
