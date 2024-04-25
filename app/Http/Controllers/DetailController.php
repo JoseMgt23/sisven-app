@@ -14,7 +14,7 @@ class DetailController extends Controller
     {
         $details = Detail::all();
 
-        return view("category.index", ["details" => $details]);
+        return view("details.index", ["details" => $details]);
     }
 
     /**
@@ -43,7 +43,7 @@ class DetailController extends Controller
 
         $details = Detail::all();
 
-        return view("category.index", ["details" => $details]);
+        return view("details.index", ["details" => $details]);
     }
 
     /**
@@ -62,7 +62,7 @@ class DetailController extends Controller
         $detail = Detail::find($id);
         $details = Detail::all();
 
-        return view("detail.index", ['detail'=>$detail,"details" => $details]);
+        return view("details.index", ['detail'=>$detail,"details" => $details]);
     }
 
     /**
@@ -80,7 +80,7 @@ class DetailController extends Controller
 
         $details = Detail::all();
 
-        return view("category.index", ["details" => $details]);
+        return view("details.index", ["details" => $details]);
     }
 
     /**
@@ -92,6 +92,6 @@ class DetailController extends Controller
         $detail->delete();
 
         $details = Detail::all();
-        return view("category.index", ["details" => $details]);
+        return view("details.index", ["details" => $details]);
     }
 }

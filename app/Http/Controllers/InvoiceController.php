@@ -14,7 +14,7 @@ class InvoiceController extends Controller
     {
         $invoices = Invoice::all();
 
-        return view("invoice.index", ["invoices" => $invoices]);
+        return view("invoices.index", ["invoices" => $invoices]);
     }
 
     /**
@@ -25,7 +25,7 @@ class InvoiceController extends Controller
         $invoices = DB::table('invoices')
             ->orderBy('number')
             ->get();
-        return view("invoice.create", ["invoices" =>  $invoices]);
+        return view("invoices.create", ["invoices" =>  $invoices]);
     }
 
     /**
@@ -41,7 +41,7 @@ class InvoiceController extends Controller
 
         $invoices = Invoice::all();
 
-        return view("invoice.index", ["invoices" => $invoices]);
+        return view("invoices.index", ["invoices" => $invoices]);
     }
 
     /**
@@ -60,7 +60,7 @@ class InvoiceController extends Controller
         $invoice = Invoice::find($id);
         $invoices = Invoice::all();
 
-        return view("invoice.index", ['invoice'=>$invoice,"invoices" => $invoices]);
+        return view("invoices.index", ['invoice'=>$invoice,"invoices" => $invoices]);
     }
 
     /**
@@ -76,7 +76,7 @@ class InvoiceController extends Controller
 
         $invoices = Invoice::all();
 
-        return view("invoice.index", ["invoices" => $invoices]);
+        return view("invoices.index", ["invoices" => $invoices]);
 
     }
 
@@ -89,6 +89,6 @@ class InvoiceController extends Controller
         $invoice->delete();
         $invoices = Invoice::all();
 
-        return view("invoice.index", ["invoices" => $invoices]);
+        return view("invoices.index", ["invoices" => $invoices]);
     }
 }

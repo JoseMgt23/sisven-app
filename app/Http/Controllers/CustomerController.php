@@ -14,7 +14,7 @@ class CustomerController extends Controller
     public function index()
     {
         $customers = Customer::all();
-        return view('customer.index', compact('customers'));
+        return view("customers.index", ["customers" => $customers]);
     }
 
     /**
@@ -25,7 +25,7 @@ class CustomerController extends Controller
         $customers = DB::table('customers')
             ->orderBy('last_name')
             ->get();
-        return view("customer.create", ["customers" => $customers])    ;
+        return view("customers.create", ["customers" => $customers])    ;
     }
 
     /**
@@ -44,7 +44,7 @@ class CustomerController extends Controller
         $customer->save();
 
         $customers = Customer::all();
-        return view('customer.index', compact('customers'));
+        return view("customers.index", ["customers" => $customers]);
     }
 
     /**
@@ -63,7 +63,7 @@ class CustomerController extends Controller
         $customer = Customer::find($id);
         $customers = Customer::all();
 
-        return view("customer.index", ['customer'=>$customer,"customers" => $customers]);
+        return view("customers.index", ['customer'=>$customer,"customers" => $customers]);
     }
 
     /**
@@ -84,7 +84,7 @@ class CustomerController extends Controller
         $customer->save();
 
         $customers = Customer::all();
-        return view("customer.index", ["customers" => $customers]);
+        return view("customers.index", ["customers" => $customers]);
     }
 
     /**
@@ -96,6 +96,6 @@ class CustomerController extends Controller
         $customer->delete();
 
         $customers = Customer::all();
-        return view("customer.index", ["customers" => $customers]);
+        return view("customers.index", ["customers" => $customers]);
     }
 }
