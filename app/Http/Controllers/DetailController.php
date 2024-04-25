@@ -62,7 +62,7 @@ class DetailController extends Controller
         $detail = Detail::find($id);
         $details = Detail::all();
 
-        return view("customer.index", ['detail'=>$detail,"details" => $details]);
+        return view("detail.index", ['detail'=>$detail,"details" => $details]);
     }
 
     /**
@@ -71,7 +71,6 @@ class DetailController extends Controller
     public function update(Request $request, string $id)
     {
         $detail = Detail::find($id);
-        $detail = new Detail();
         $detail->invoice_id = $request->id_invoices;
         $detail->product_id = $request->id_products;
         $detail->quantity = $request->quantity;
