@@ -8,22 +8,26 @@ use Illuminate\Database\Eloquent\Model;
 class Detail extends Model
 {
     use HasFactory;
-    protected $table = "paymode";
-    protected $primaryKey = "id_paymode";
+    protected $table = "details";
+    protected $primaryKey = "id_detail";
     public $timestamps = false;
 
     protected $fillable = [
-        'document_number',
-        'first_name',
-        'last_name',
-        'address',
-        'birthday',
-        'phone_number',
-        'email',
+        'id_invoices',
+        'id_products',
+        'quantity',
+        'price',
     ];
 
-    public function invoices()
+
+    public function invoice()
     {
-        return $this->hasMany(Invoice::class);
+        return $this->belongsTo(Invoice::class);
+    }
+
+    // Relación con el producto
+    public function product()
+    {
+        return $this->belongsTo(Product::class);
     }
 }
