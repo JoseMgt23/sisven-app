@@ -12,7 +12,7 @@
   </head>
   <body>
     <h1>Listado de Category</h1>
-    <a href="{{}}"></a>
+    <a href="{{ route('categories.create') }}" class="btn btn-primary">Crear nuevo Paymode</a>
     <table class="table">
   <thead>
     <tr>
