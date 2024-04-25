@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\CustomerController;
+use App\Http\Controllers\DetailController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -22,3 +23,14 @@ Route::get('/customers/create', [CustomerController::class, 'create'])->name('cu
 Route::get('/customers/{customer}', [CustomerController::class, 'destroy'])->name('customers.destroy');
 Route::put('/customers/{customer}', [CustomerController::class, 'update'])->name('customers.update');
 Route::get('/customers/{customer}/edit', [CustomerController::class, 'edit'])->name('customers.edit');
+
+//Details
+
+Route::get('/details', [DetailController::class, 'index'])->name('details.index');
+Route::post('/details', [DetailController::class, 'store'])->name('details.store');
+Route::get('/details/create', [DetailController::class, 'create'])->name('details.create');
+Route::get('/details/{detail}', [DetailController::class, 'destroy'])->name('details.destroy');
+Route::put('/details/{detail}', [DetailController::class, 'update'])->name('details.update');
+Route::get('/details/{detail}/edit', [DetailController::class, 'edit'])->name('details.edit');
+
+//PayMode
